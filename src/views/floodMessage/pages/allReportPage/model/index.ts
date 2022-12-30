@@ -1,0 +1,1 @@
+export {default as  YlyModal} from  "./YlyModal.vue"

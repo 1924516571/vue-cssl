@@ -1,0 +1,636 @@
+<template>
+<!-- 洪涝灾害 -->
+  <div class="contain">
+    <h1 class="contain_title">常州市武进区洪涝灾害基本情况统计表</h1>
+    <div class="contain_body ">
+      <div class="table">
+        <el-table :data="tableData" :header-cell-style="{ textAlign: 'center' }" :cell-style="{ textAlign: 'center' }" height="100%">
+          <el-table-column label="序号" type="index" width="50"> </el-table-column>
+          <el-table-column prop="areaName" label="地区" width="180"> </el-table-column>
+          <el-table-column label="受灾范围">
+            <el-table-column prop="xian" label="县(个)" width="100"> </el-table-column>
+            <el-table-column prop="xz" label="乡镇(个)" width="100"> </el-table-column>
+            <el-table-column prop="cun" label="村(个)" width="100"> </el-table-column>
+            <el-table-column prop="jd" label="街道(个)" width="100"> </el-table-column>
+            <el-table-column prop="jwh" label="居委会(个)" width="100"> </el-table-column>
+          </el-table-column>
+          <el-table-column prop="aa" label="受灾人口(万人)"></el-table-column>
+          <el-table-column prop="bb" label="洪水围困人口（万人"></el-table-column>
+          <el-table-column prop="cc" label="紧急转移人口（万人）"></el-table-column>
+          <el-table-column prop="dd" label="受淹城镇小计（个）"></el-table-column>
+
+          <el-table-column label="住宅受淹">
+            <el-table-column prop="chengzhen" label="城镇（万户）" width="150"> </el-table-column>
+            <el-table-column prop="nongcun" label="农村（万户）" width="150"> </el-table-column>
+          </el-table-column>
+
+          <el-table-column prop="sunhuai" label="损坏房屋（万间）" width="100"></el-table-column>
+          <el-table-column prop="daota" label="倒塌房屋" width="100"> </el-table-column>
+          <el-table-column prop="daolu" label="道路积水最大水深（米）" width="100"> </el-table-column>
+          <el-table-column prop="siwang" label="死亡人口(人)" width="100"> </el-table-column>
+          <el-table-column prop="sizong" label="失踪人口(人)" width="100"> </el-table-column>
+
+          <el-table-column label="受伤人口">
+            <el-table-column prop="xiaoji" label="小计（人）" width="100"> </el-table-column>
+            <el-table-column prop="zhongshang" label="重伤（人）" width="100"> </el-table-column>
+          </el-table-column>
+          <el-table-column prop="total" label="直接经济总损失（亿元）" width="100"> </el-table-column>
+          <el-table-column prop="hj" label="合计" width="100"> </el-table-column>
+        </el-table>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { Vue, Component, Watch, Prop } from "vue-property-decorator";
+@Component
+export default class ReportSelect extends Vue {
+  @Prop({
+    type: String,
+    default: "",
+  })
+  report!: any;
+
+  @Prop({
+    type: String,
+    default: "",
+  })
+  title!: any;
+  @Prop({ type: Boolean, default: "" }) clickShow!: boolean;
+
+  tableData: any = [];
+
+  mounted() {}
+  async getData() {
+       console.log("88888");
+    this.tableData = [
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+      {
+        areaName: "武进",
+        xian: "11",
+        xz: "33",
+        cun: "9",
+        jwh: "3",
+        jd: "12321",
+        aa: 8,
+        bb: "7",
+        cc: "23",
+        dd: "99",
+        chengzhen: "3232",
+        nongcun: "87",
+        sunhuai: "4",
+        daota: "12",
+        daolu: "77723",
+        siwang: "234",
+        sizong: "2342234",
+        xiaoji: "45645",
+        zhongshang: "45645",
+        total: "3454352131",
+        hj: "121",
+      },
+    ];
+  }
+
+  @Watch("clickShow", { deep: true, immediate: true })
+  getReport() {
+    if (this.clickShow == true) {
+      this.getData();
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+$deep: "::v-deep";
+.contain {
+  width: 100%;
+  height: 100%;
+  .contain_title {
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+  }
+  .contain_body {
+    width: 100%;
+    height: calc(100% - 100px); //中间有空格
+    .table {
+      height: 100%;
+      width: 100%;
+      #{$deep}.el-table__body-wrapper::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+       #{$deep}.el-table__body-wrapper::-webkit-scrollbar-thumb{
+           background-color: rgb(149, 140, 140);
+           border-radius: 3px;
+       } 
+    }
+  }
+}
+</style>

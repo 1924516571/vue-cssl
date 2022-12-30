@@ -1,0 +1,5 @@
+export {default as AlarmBar} from './AlarmBar.vue'
+export {default as AlarmMonitor} from './AlarmMonitor.vue'
+export {default as QulityPie} from './QulityPie.vue'
+export {default as StatusBar} from './StatusBar.vue'
+export {default as WorkDynamic} from './WorkDynamic.vue'

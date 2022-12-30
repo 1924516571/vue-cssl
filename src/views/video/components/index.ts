@@ -1,0 +1,1 @@
+export {default as VideoMain} from './VideoMain.vue'
